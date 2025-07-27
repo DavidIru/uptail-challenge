@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-chat-bg text-gray-900;
+  }
+}
+
+@layer components {
+  .chat-message {
+    @apply px-4 py-6 border-b border-gray-200;
+  }
+  
+  .user-message {
+    @apply bg-gray-50;
+  }
+  
+  .assistant-message {
+    @apply bg-white;
+  }
+  
+  .message-content {
+    @apply max-w-3xl mx-auto;
+  }
+  
+  .chat-input {
+    @apply w-full p-4 pr-12 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-message-user focus:border-transparent;
+  }
+  
+  .send-button {
+    @apply absolute right-3 top-1/2 transform -translate-y-1/2 p-2 text-gray-400 hover:text-message-user transition-colors;
+  }
+  
+  .typing-dots {
+    @apply inline-flex space-x-1;
+  }
+  
+  .typing-dot {
+    @apply w-2 h-2 bg-gray-400 rounded-full;
+    animation: typingPulse 1.4s ease-in-out infinite both;
+  }
+  
+  .typing-dot:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes typingPulse {
+    0%, 60%, 100% {
+      transform: translateY(0) scale(1);
+      opacity: 0.4;
+    }
+    30% {
+      transform: translateY(-10px) scale(1.2);
+      opacity: 1;
+    }
+  }
+
+  /* Sidebar transitions */
+  .sidebar-enter {
+    transform: translateX(-100%);
+  }
+  
+  .sidebar-enter-active {
+    transform: translateX(0);
+    transition: transform 300ms ease-in-out;
+  }
+} 

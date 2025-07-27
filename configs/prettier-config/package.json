@@ -1,0 +1,9 @@
+{
+  "name": "@uptail/prettier-config",
+  "version": "1.0.0",
+  "description": "",
+  "main": "prettier.config.cjs",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
